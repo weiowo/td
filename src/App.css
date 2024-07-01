@@ -2,37 +2,311 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu {
+  width: 24vw;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: all 0.3s ease;
+}
+
+.menuTextGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  margin-top: 0px;
+  width: fit-content;
+  cursor: pointer;
+  gap: 20px;
+  height: 0;
+}
+
+.hamburgerMenu {
+  display: none;
+}
+
+.banner {
+  background-image: url(./images/banner.jpeg);
+  width: 100%;
+  height: calc(100vh - 367px);
   color: white;
+  position: relative;
+  background-size: 185%;
+  background-position: 67% 50%;
+  background-repeat: no-repeat;
 }
 
-.App-link {
-  color: #61dafb;
+.bannerTextGroup {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  text-align: right;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.bannerTitle {
+  font-size: 48px;
+  font-weight: 600;
+  -webkit-text-stroke: 1px;
+}
+
+.selectedMenu {
+  color: #aa6666;
+  border-bottom: 1px solid #aa6666;
+  padding-bottom: 1px;
+  font-weight: bold;
+}
+
+.birdContainer {
+  width: 90px;
+  height: 90px;
+  background: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  right: -50px;
+  top: 50px;
+  z-index: 100;
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 0px 15px;
+}
+
+.bird {
+  position: relative;
+  width: 45px;
+  height: 40px;
+}
+
+.bird .body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 60% 33% 45% 0%;
+}
+
+.bird .wing {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-color: white;
+  border-radius: 60% 22% 40% 0%;
+}
+
+.bird .pupil {
+  position: absolute;
+  top: 38%;
+  left: 66%;
+  width: 16%;
+  height: 20%;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.bird .beak {
+  position: absolute;
+  top: 33%;
+  left: 100%;
+  width: 25%;
+  height: 15%;
+  background-color: black;
+  border-radius: 0% 100% 0% 0%;
+  transform: rotate(-7deg);
+}
+
+.menuTitle {
+  height: 87px;
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 67px;
+  margin-bottom: 78px;
+}
+
+.mainContent {
+  width: 76vw;
+}
+
+.intro {
+  min-height: 367px;
+  background-color: #dcccbc;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 50px;
+  gap: 20px;
+}
+
+.introbox {
+  width: 30%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.introbox .title {
+  font-size: 36px;
+  font-weight: 800;
+  position: relative;
+  height: 95px;
+  width: 65px;
+  -webkit-text-stroke: 0.5px;
+}
+
+.introbox .title b {
+  line-height: 20px;
+  height: 80px;
+}
+
+
+.text {
+  font-size: 16px;
+  width: 68%;
+  text-align: left;
+}
+
+.donut {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 8px solid #aa6666;
+  opacity: 70%;
+  border-radius: 50%;
+  background-color: #dcccbc;
+  right: 0;
+  bottom: 0px;
+}
+
+@media screen and (max-width:790px) {
+  .page {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu,
+  .mainContent {
+    width: 100%;
+  }
+
+  .menu {
+    height: 87px;
+    flex-direction: row;
+  }
+
+  .menuItems {
+    display: none;
+  }
+
+  .menuItems.open {
+    display: flex;
+    opacity: 1;
+  }
+
+  .menu.open {
+    height: 286px;
+  }
+
+  .menuTextGroup {
+    width: 100%;
+    height: 100%
+  }
+
+  .menuTitle {
+    height: 87px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 0
+  }
+
+
+  .birdContainer {
+    right: 0;
+    width: 48px;
+    height: 48px;
+    top: 20px;
+    right: 20px;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 0px 5px;
+  }
+
+  .bird {
+    position: relative;
+    width: 23px;
+    height: 20px;
+  }
+
+  .banner {
+    height: 311px;
+  }
+
+  .bannerTextGroup {
+    width: 90%;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .intro {
+    height: auto;
+    flex-direction: column;
+    padding: 50px 30px;
+    gap: 50px;
+  }
+
+  .introbox {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .hamburgerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    transition: transform 0.3s ease;
+
+  }
+
+  .hamburgerMenu .bar {
+    width: 100%;
+    height: 4px;
+    background-color: black;
+  }
+
+  .hamburgerMenu .bar:nth-child(2) {
+    width: 60%;
+  }
+
+  .hamburgerMenu.open .bar:nth-child(1) {
+    transform: rotate(45deg);
+    top: 13px;
+    position: absolute;
+  }
+
+  .hamburgerMenu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburgerMenu.open .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 13px;
+    position: absolute;
   }
 }
